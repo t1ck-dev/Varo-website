@@ -9,3 +9,21 @@
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid #1F1F2E;
 }
+
+/* Hero animated gradient */
+.hero-bg {
+  background: linear-gradient(135deg, #0A0A0F 0%, #0C1A14 40%, #0A0A0F 70%, #0F0A1A 100%);
+  background-size: 400% 400%;
+  animation: gradient-drift 12s ease infinite;
+}
+
+@keyframes gradient-drift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hero radial glow */
+.hero-glow {
+  background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0, 229, 160, 0.06) 0%, transparent 70%);
+}
