@@ -39,3 +39,15 @@ spazaToggle.addEventListener('click', () => {
   spazaContent.style.maxHeight = isOpen ? '0' : spazaContent.scrollHeight + 'px';
   spazaChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
 });
+
+// Smooth scroll for anchor links (handles offset for fixed nav)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', e => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = nav.offsetHeight + 16;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+});
