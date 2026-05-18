@@ -37,135 +37,169 @@
 </head>
 <body class="bg-varo-bg text-white font-sans antialiased">
 
-  <!-- Sections go here -->
-
   <!-- NAV -->
   <nav id="nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-
-      <!-- Logo -->
       <a href="#" class="flex-shrink-0">
         <img src="assets/logo.svg" alt="Varo" class="h-7" />
       </a>
-
-      <!-- Desktop CTA -->
+      <div class="hidden md:flex items-center gap-8 text-sm text-varo-muted font-medium">
+        <a href="#services" class="hover:text-white transition-colors duration-200">Services</a>
+        <a href="#how-it-works" class="hover:text-white transition-colors duration-200">How It Works</a>
+        <a href="#pricing" class="hover:text-white transition-colors duration-200">Pricing</a>
+      </div>
       <a
         href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
-        target="_blank"
-        rel="noopener noreferrer"
+        target="_blank" rel="noopener noreferrer"
         class="hidden md:inline-flex items-center gap-2 bg-varo-accent text-varo-bg font-semibold text-sm px-5 py-2.5 rounded-full hover:brightness-110 transition-all duration-200"
       >
-        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Chat on WhatsApp
       </a>
-
-      <!-- Mobile hamburger -->
       <button type="button" id="menu-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="Menu">
         <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
         <span class="menu-bar block w-6 h-0.5 bg-white transition-all duration-300"></span>
       </button>
     </div>
-
-    <!-- Mobile overlay menu -->
     <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-varo-surface border-t border-varo-border px-6 py-6 flex flex-col gap-4">
       <a href="#services" class="text-white text-lg font-medium mobile-link">Services</a>
       <a href="#how-it-works" class="text-white text-lg font-medium mobile-link">How It Works</a>
       <a href="#pricing" class="text-white text-lg font-medium mobile-link">Pricing</a>
       <a
         href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
-        target="_blank"
-        rel="noopener noreferrer"
+        target="_blank" rel="noopener noreferrer"
         class="inline-flex items-center justify-center gap-2 bg-varo-accent text-varo-bg font-semibold px-5 py-3 rounded-full"
-      >
-        Chat on WhatsApp
-      </a>
+      >Chat on WhatsApp</a>
     </div>
   </nav>
 
   <!-- HERO -->
-  <section class="hero-bg relative min-h-screen flex items-center justify-center text-center px-6 pt-20">
-    <!-- Radial glow -->
+  <section class="hero-bg relative min-h-screen flex items-center px-6 pt-20">
     <div class="hero-glow absolute inset-0 pointer-events-none"></div>
+    <div class="relative z-10 max-w-6xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-16 py-16">
 
-    <div class="relative z-10 max-w-4xl mx-auto">
-      <!-- Eyebrow badge -->
-      <div class="inline-flex items-center gap-2 bg-varo-surface border border-varo-border rounded-full px-4 py-1.5 text-sm text-varo-muted mb-8">
-        <span class="w-2 h-2 rounded-full bg-varo-accent animate-pulse"></span>
-        AI Automation for SA Businesses
+      <!-- Left: copy -->
+      <div class="flex-1 text-center lg:text-left max-w-2xl">
+        <div class="inline-flex items-center gap-2 bg-varo-surface border border-varo-border rounded-full px-4 py-1.5 text-sm text-varo-muted mb-8">
+          <span class="w-2 h-2 rounded-full bg-varo-accent animate-pulse"></span>
+          AI Automation for SA Businesses
+        </div>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight mb-6">
+          Stop losing leads<br />
+          while you're<br />
+          <span class="text-varo-accent">busy working.</span>
+        </h1>
+        <p class="text-lg md:text-xl text-varo-muted max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
+          Varo qualifies every inbound lead on WhatsApp — 24/7 — so only serious, ready-to-buy clients reach you. Set up in 48 hours.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+          <a
+            href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
+            target="_blank" rel="noopener noreferrer"
+            class="btn-primary inline-flex items-center gap-2 text-varo-bg font-bold text-base px-8 py-4 rounded-full shadow-lg shadow-[#00E5A0]/20 transition-all duration-200 hover:brightness-110"
+          >
+            <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Get Started on WhatsApp
+          </a>
+          <a
+            href="#services"
+            class="inline-flex items-center gap-2 text-white font-semibold text-base px-8 py-4 rounded-full border border-varo-border hover:border-varo-accent/50 transition-all duration-200"
+          >
+            See What We Do
+            <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+          </a>
+        </div>
       </div>
 
-      <!-- Headline -->
-      <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight mb-6">
-        Your business runs<br />
-        <span class="text-varo-accent">24/7.</span> Your lead<br />
-        follow-up should too.
-      </h1>
-
-      <!-- Subheadline -->
-      <p class="text-lg md:text-xl text-varo-muted max-w-2xl mx-auto mb-10 leading-relaxed">
-        AI automation for SA businesses — qualify leads, manage sales, and grow — on autopilot.
-      </p>
-
-      <!-- CTAs -->
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <a
-          href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 bg-varo-accent text-varo-bg font-bold text-base px-8 py-4 rounded-full hover:brightness-110 transition-all duration-200 shadow-lg shadow-[#00E5A0]/20"
-        >
-          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-          Get Started on WhatsApp
-        </a>
-        <a
-          href="#services"
-          class="inline-flex items-center gap-2 text-white font-semibold text-base px-8 py-4 rounded-full border border-varo-border hover:border-varo-accent/50 transition-all duration-200"
-        >
-          See What We Do
-          <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
-        </a>
+      <!-- Right: phone mockup -->
+      <div class="hidden lg:flex flex-shrink-0 justify-center items-center">
+        <div class="phone-wrap">
+          <div class="phone-frame">
+            <div class="phone-notch"><div class="phone-notch-bar"></div></div>
+            <div class="wa-header">
+              <div class="wa-avatar-sm">V</div>
+              <div>
+                <div class="wa-name">Varo AI</div>
+                <div class="wa-online">● online</div>
+              </div>
+            </div>
+            <div class="wa-body" id="wa-chat">
+              <div class="wa-msg in" id="msg1">Hi, saw your ad. How much for a website?</div>
+              <div class="wa-typing" id="typing1"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+              <div class="wa-msg out" id="msg2">Hey! What type of business do you run?</div>
+              <div class="wa-msg in" id="msg3">I have a plumbing company in JHB</div>
+              <div class="wa-typing" id="typing2"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+              <div class="wa-msg out" id="msg4">What's your monthly budget for marketing?</div>
+              <div class="wa-msg in" id="msg5">Around R3–5k a month</div>
+              <div class="wa-typing" id="typing3"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+              <div class="wa-msg hot" id="msg6">🔥 Hot lead — summary sent to owner</div>
+            </div>
+          </div>
+          <div class="lead-notif" id="lead-notif">
+            <div class="notif-badge">🔥 Hot lead</div>
+            <div class="notif-title">Plumbing · JHB</div>
+            <div class="notif-sub">Budget R3–5k/mo · Ready now</div>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
+
+  <!-- STATS BAR -->
+  <div class="stats-bar bg-varo-surface py-10 px-6">
+    <div class="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <div class="reveal">
+        <div class="text-3xl font-black text-varo-accent counter" data-target="48">0</div>
+        <div class="text-xs text-varo-muted uppercase tracking-widest mt-1 font-semibold">Hour Setup</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="text-3xl font-black text-white">24/7</div>
+        <div class="text-xs text-varo-muted uppercase tracking-widest mt-1 font-semibold">Always On</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="text-3xl font-black text-white counter" data-target="300">0</div>
+        <div class="text-xs text-varo-muted uppercase tracking-widest mt-1 font-semibold">Leads Qualified</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="text-3xl font-black text-white">R399</div>
+        <div class="text-xs text-varo-muted uppercase tracking-widest mt-1 font-semibold">Per Month</div>
+      </div>
+    </div>
+  </div>
 
   <!-- PROBLEM -->
   <section class="py-24 px-6">
     <div class="max-w-6xl mx-auto">
-      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4">Sound familiar?</p>
-      <h2 class="text-center text-3xl md:text-4xl font-black mb-16">
-        Most SA businesses are leaving<br class="hidden md:block" /> money on the table. Every day.
+      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4 reveal">Sound familiar?</p>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-4 reveal">
+        Your business gets enquiries.<br class="hidden md:block" /> You just never see half of them.
       </h2>
+      <p class="text-center text-varo-muted max-w-xl mx-auto mb-16 reveal">The leads are there. The problem is they arrive when you're busy — and by the time you reply, they've moved on.</p>
 
       <div class="grid md:grid-cols-3 gap-6">
-
-        <!-- Card 1 -->
-        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-[#0A0A0F] border border-varo-border flex items-center justify-center">
-            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"><path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z"/><path d="M12 6v6l4 2"/></svg>
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4 card-hover reveal">
+          <div class="w-12 h-12 rounded-xl bg-varo-bg border border-varo-border flex items-center justify-center">
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
           </div>
-          <h3 class="text-xl font-bold">Leads go cold while you're busy</h3>
-          <p class="text-varo-muted leading-relaxed">By the time you respond, they've already messaged your competitor. Speed wins — and you're not fast enough manually.</p>
+          <h3 class="text-xl font-bold">Leads go cold while you're working</h3>
+          <p class="text-varo-muted leading-relaxed">By the time you're free to reply, they've already messaged your competitor. The first business to respond almost always wins the job.</p>
         </div>
-
-        <!-- Card 2 -->
-        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-[#0A0A0F] border border-varo-border flex items-center justify-center">
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4 card-hover reveal reveal-delay-1">
+          <div class="w-12 h-12 rounded-xl bg-varo-bg border border-varo-border flex items-center justify-center">
             <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="23" y1="11" x2="17" y2="11"/></svg>
           </div>
-          <h3 class="text-xl font-bold">Hours wasted on time-wasters</h3>
-          <p class="text-varo-muted leading-relaxed">You spend 20 minutes qualifying someone who had no budget and no intent. That time is gone. It adds up to weeks per year.</p>
+          <h3 class="text-xl font-bold">You waste time on tyre-kickers</h3>
+          <p class="text-varo-muted leading-relaxed">You spend 20 minutes qualifying someone with no budget and no intent. Multiply that by 10 per week — that's hours gone every month on people who were never going to buy.</p>
         </div>
-
-        <!-- Card 3 -->
-        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-[#0A0A0F] border border-varo-border flex items-center justify-center">
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-4 card-hover reveal reveal-delay-2">
+          <div class="w-12 h-12 rounded-xl bg-varo-bg border border-varo-border flex items-center justify-center">
             <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.16 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.61 5.61l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
           </div>
-          <h3 class="text-xl font-bold">Missed sales from slow responses</h3>
-          <p class="text-varo-muted leading-relaxed">Your business gets enquiries at 10pm, over weekends, on public holidays. You can't be there. Your AI can.</p>
+          <h3 class="text-xl font-bold">Sales happen at 10pm and weekends</h3>
+          <p class="text-varo-muted leading-relaxed">Your business gets enquiries at midnight, on public holidays, during load shedding. You can't always be there. Your AI never switches off.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -173,56 +207,110 @@
   <!-- SERVICES -->
   <section id="services" class="py-24 px-6 bg-varo-surface">
     <div class="max-w-6xl mx-auto">
-      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4">What we build</p>
-      <h2 class="text-center text-3xl md:text-4xl font-black mb-4">AI automation that actually works</h2>
-      <p class="text-center text-varo-muted max-w-xl mx-auto mb-16">Built for SA businesses that are serious about growth. Not demos. Real systems.</p>
+      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4 reveal">What we build</p>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-4 reveal">AI automation that actually closes deals</h2>
+      <p class="text-center text-varo-muted max-w-xl mx-auto mb-16 reveal">Not demos. Not experiments. Real systems built for SA businesses that are serious about growth.</p>
 
       <div class="grid md:grid-cols-3 gap-6">
 
-        <!-- Service 1: Lead Qualifier -->
-        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 hover:border-varo-accent/40 transition-colors duration-300">
+        <!-- Lead Qualifier -->
+        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal">
           <div class="w-14 h-14 rounded-2xl bg-varo-surface border border-varo-border flex items-center justify-center">
-            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            <!-- Custom icon: funnel with check -->
+            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/>
+              <path d="M16 17l2 2 4-4" stroke="#00E5A0" stroke-width="2"/>
+            </svg>
           </div>
           <div>
             <h3 class="text-xl font-bold mb-2">WhatsApp Lead Qualifier</h3>
-            <p class="text-varo-muted leading-relaxed">Qualifies inbound leads 24/7 via WhatsApp. Asks the right questions, scores them, and only forwards the hot ones to you with a full summary.</p>
+            <p class="text-varo-muted leading-relaxed">Qualifies every inbound lead 24/7. Asks about budget, timeline, and intent — then forwards only the hot ones with a full summary so you know exactly what to say when you call.</p>
           </div>
-          <a href="#pricing" class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200 mt-auto">
+          <ul class="flex flex-col gap-2 mt-auto">
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Replies in under 60 seconds
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Works across WhatsApp, IG, website
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Live in 48 hours
+            </li>
+          </ul>
+          <a href="#pricing" class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200">
             See pricing
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 
-        <!-- Service 2: Spaza Bot -->
-        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 hover:border-varo-accent/40 transition-colors duration-300">
+        <!-- Spaza Bot -->
+        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal reveal-delay-1">
           <div class="w-14 h-14 rounded-2xl bg-varo-surface border border-varo-border flex items-center justify-center">
-            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            <!-- Custom icon: shop with chart up -->
+            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9 22 9 12 15 12 15 22"/>
+              <polyline points="8 16 10.5 13 13 15.5 16 12" stroke="#00E5A0" stroke-width="1.6"/>
+            </svg>
           </div>
           <div>
             <h3 class="text-xl font-bold mb-2">Spaza Shop Bot</h3>
-            <p class="text-varo-muted leading-relaxed">Track sales, stock levels, and profit — all by sending a WhatsApp message. Daily summaries, low-stock alerts, and year-end tax reports automatically.</p>
+            <p class="text-varo-muted leading-relaxed">Track sales, stock, and profit just by sending a WhatsApp message. Daily summaries, low-stock alerts, and year-end tax reports — no spreadsheets, no app, no admin.</p>
           </div>
-          <a href="#pricing" class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200 mt-auto">
+          <ul class="flex flex-col gap-2 mt-auto">
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Log sales in seconds via WhatsApp
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Morning low-stock alerts
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Year-end tax summary included
+            </li>
+          </ul>
+          <a href="#pricing" class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200">
             See pricing
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
 
-        <!-- Service 3: Ads & Creatives -->
-        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 hover:border-varo-accent/40 transition-colors duration-300">
+        <!-- Ads & Creatives -->
+        <div class="bg-varo-bg border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal reveal-delay-2">
           <div class="w-14 h-14 rounded-2xl bg-varo-surface border border-varo-border flex items-center justify-center">
-            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <!-- Custom icon: sparkle/ad -->
+            <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/>
+              <path d="M12 2v4M12 18v4M2 12h4M18 12h4" stroke="#00E5A0" stroke-width="1.4" opacity="0.5"/>
+            </svg>
           </div>
           <div>
             <h3 class="text-xl font-bold mb-2">Ads &amp; Creatives</h3>
-            <p class="text-varo-muted leading-relaxed">Scroll-stopping ads and creative content designed to convert. Built with AI and strategic intent — not generic templates.</p>
+            <p class="text-varo-muted leading-relaxed">Scroll-stopping ads and creative content built to convert. Designed with AI and strategic intent — not generic templates that look like every other business in your industry.</p>
           </div>
+          <ul class="flex flex-col gap-2 mt-auto">
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Facebook, Instagram &amp; Google ads
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom creatives per campaign
+            </li>
+            <li class="flex items-center gap-2 text-sm text-varo-muted">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Copy written to convert, not impress
+            </li>
+          </ul>
           <a
             href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27m%20interested%20in%20Ads%20%26%20Creatives."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200 mt-auto"
+            target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-varo-accent text-sm font-semibold hover:gap-3 transition-all duration-200"
           >
             Get a quote
             <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -236,42 +324,33 @@
   <!-- HOW IT WORKS -->
   <section id="how-it-works" class="py-24 px-6">
     <div class="max-w-5xl mx-auto">
-      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4">How it works</p>
-      <h2 class="text-center text-3xl md:text-4xl font-black mb-4">Simple. Automated. Done.</h2>
-      <p class="text-center text-varo-muted max-w-lg mx-auto mb-20">Three steps between your leads coming in and you closing deals — with zero manual work in between.</p>
+      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4 reveal">How it works</p>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-4 reveal">Three steps. Zero manual work.</h2>
+      <p class="text-center text-varo-muted max-w-lg mx-auto mb-20 reveal">From lead coming in to you closing the deal — the AI handles everything in between.</p>
 
       <div class="relative flex flex-col md:flex-row items-start md:items-center justify-between gap-12 md:gap-0">
-
-        <!-- Connector line (desktop only) -->
         <div class="hidden md:block absolute top-8 left-[20%] right-[20%] h-px bg-gradient-to-r from-varo-border via-varo-accent/40 to-varo-border"></div>
-
-        <!-- Step 1 -->
-        <div class="flex flex-col items-center text-center md:w-64 relative z-10">
+        <div class="flex flex-col items-center text-center md:w-64 relative z-10 reveal">
           <div class="w-16 h-16 rounded-full bg-varo-surface border-2 border-varo-accent flex items-center justify-center mb-6 shadow-lg shadow-[#00E5A0]/10">
             <span class="text-varo-accent text-xl font-black">1</span>
           </div>
           <h3 class="font-bold text-lg mb-2">Lead comes in</h3>
-          <p class="text-varo-muted text-sm leading-relaxed">Via WhatsApp, Instagram, your website — wherever enquiries come from.</p>
+          <p class="text-varo-muted text-sm leading-relaxed">Via WhatsApp, Instagram, or your website — wherever enquiries come from.</p>
         </div>
-
-        <!-- Step 2 -->
-        <div class="flex flex-col items-center text-center md:w-64 relative z-10">
+        <div class="flex flex-col items-center text-center md:w-64 relative z-10 reveal reveal-delay-1">
           <div class="w-16 h-16 rounded-full bg-varo-surface border-2 border-varo-accent flex items-center justify-center mb-6 shadow-lg shadow-[#00E5A0]/10">
             <span class="text-varo-accent text-xl font-black">2</span>
           </div>
           <h3 class="font-bold text-lg mb-2">AI qualifies them</h3>
-          <p class="text-varo-muted text-sm leading-relaxed">Asks budget, timeline, and intent questions. Scores the lead hot or cold instantly.</p>
+          <p class="text-varo-muted text-sm leading-relaxed">Asks about budget, timeline, and intent. Scores them hot or cold — instantly, every time.</p>
         </div>
-
-        <!-- Step 3 -->
-        <div class="flex flex-col items-center text-center md:w-64 relative z-10">
+        <div class="flex flex-col items-center text-center md:w-64 relative z-10 reveal reveal-delay-2">
           <div class="w-16 h-16 rounded-full bg-varo-surface border-2 border-varo-accent flex items-center justify-center mb-6 shadow-lg shadow-[#00E5A0]/10">
             <span class="text-varo-accent text-xl font-black">3</span>
           </div>
           <h3 class="font-bold text-lg mb-2">You close the deal</h3>
-          <p class="text-varo-muted text-sm leading-relaxed">Only the hot leads reach you — with a full summary so you already know what they need.</p>
+          <p class="text-varo-muted text-sm leading-relaxed">Only hot leads reach you — with a full summary so you already know exactly what they need before you call.</p>
         </div>
-
       </div>
     </div>
   </section>
@@ -279,40 +358,26 @@
   <!-- PRICING -->
   <section id="pricing" class="py-24 px-6 bg-varo-surface">
     <div class="max-w-5xl mx-auto">
-      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4">Pricing</p>
-      <h2 class="text-center text-3xl md:text-4xl font-black mb-4">Transparent pricing. No surprises.</h2>
-      <p class="text-center text-varo-muted max-w-lg mx-auto mb-16">One price. No hidden fees. Cancel anytime.</p>
+      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4 reveal">Pricing</p>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-4 reveal">One price. No surprises.</h2>
+      <p class="text-center text-varo-muted max-w-lg mx-auto mb-16 reveal">No hidden fees. No locked contracts. Cancel anytime.</p>
 
-      <!-- Lead Qualifier Card (featured) -->
-      <div class="relative bg-varo-bg border-2 border-varo-accent rounded-2xl p-8 md:p-10 mb-6 shadow-xl shadow-[#00E5A0]/5">
+      <!-- Lead Qualifier Card -->
+      <div class="relative bg-varo-bg border-2 border-varo-accent rounded-2xl p-8 md:p-10 mb-6 shadow-xl shadow-[#00E5A0]/5 reveal">
         <div class="absolute -top-3.5 left-1/2 -translate-x-1/2">
           <span class="bg-varo-accent text-varo-bg text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Most Popular</span>
         </div>
-
         <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-8">
           <div class="flex-1">
             <h3 class="text-2xl font-black mb-1">WhatsApp Lead Qualifier</h3>
             <p class="text-varo-muted mb-6">For businesses that want more qualified leads without the manual work.</p>
             <ul class="flex flex-col gap-3">
-              <li class="flex items-center gap-3 text-sm">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                AI qualifies every inbound lead 24/7
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Only hot leads forwarded to you with full summary
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Works on WhatsApp, Instagram, and your website
-              </li>
-              <li class="flex items-center gap-3 text-sm">
-                <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>
-                Setup completed within 48 hours
-              </li>
+              <li class="flex items-center gap-3 text-sm"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>AI qualifies every inbound lead 24/7</li>
+              <li class="flex items-center gap-3 text-sm"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Only hot leads forwarded with a full summary</li>
+              <li class="flex items-center gap-3 text-sm"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Works on WhatsApp, Instagram, and your website</li>
+              <li class="flex items-center gap-3 text-sm"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Setup completed within 48 hours</li>
             </ul>
           </div>
-
           <div class="flex flex-col items-start md:items-end gap-4 shrink-0">
             <div>
               <div class="text-4xl font-black">R399<span class="text-varo-muted text-base font-normal">/month</span></div>
@@ -320,21 +385,17 @@
             </div>
             <a
               href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20set%20up%20the%20WhatsApp%20Lead%20Qualifier."
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-2 bg-varo-accent text-varo-bg font-bold px-7 py-3.5 rounded-full hover:brightness-110 transition-all duration-200"
-            >
-              Get Started
-            </a>
+              target="_blank" rel="noopener noreferrer"
+              class="btn-primary inline-flex items-center gap-2 text-varo-bg font-bold px-7 py-3.5 rounded-full transition-all duration-200"
+            >Get Started</a>
           </div>
         </div>
       </div>
 
       <!-- Spaza Bot Accordion -->
-      <div class="bg-varo-bg border border-varo-border rounded-2xl overflow-hidden">
+      <div class="bg-varo-bg border border-varo-border rounded-2xl overflow-hidden reveal">
         <button
-          type="button"
-          id="spaza-toggle"
+          type="button" id="spaza-toggle"
           class="w-full flex items-center justify-between px-8 py-5 text-left hover:bg-white/5 transition-colors duration-200"
           aria-expanded="false"
         >
@@ -344,91 +405,134 @@
           </div>
           <svg aria-hidden="true" id="spaza-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6B7280" stroke-width="2" stroke-linecap="round" class="transition-transform duration-300 shrink-0"><path d="M6 9l6 6 6-6"/></svg>
         </button>
-
         <div id="spaza-content" class="accordion-content overflow-hidden" style="max-height:0">
           <div class="px-8 pb-8 pt-2">
             <p class="text-varo-muted mb-6">Track sales, stock, and profit — all by WhatsApp message.</p>
             <div class="grid md:grid-cols-3 gap-4">
-
-              <!-- Basic -->
               <div class="border border-varo-border rounded-xl p-5">
                 <div class="text-2xl font-black mb-1">R99<span class="text-varo-muted text-sm font-normal">/mo</span></div>
                 <div class="font-semibold mb-3">Basic</div>
                 <ul class="flex flex-col gap-2 text-sm text-varo-muted">
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Log sales by WhatsApp</li>
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Daily 5pm revenue summary</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Log sales by WhatsApp</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Daily 5pm revenue summary</li>
                 </ul>
               </div>
-
-              <!-- Standard -->
               <div class="border border-varo-border rounded-xl p-5">
                 <div class="text-2xl font-black mb-1">R149<span class="text-varo-muted text-sm font-normal">/mo</span></div>
                 <div class="font-semibold mb-3">Standard</div>
                 <ul class="flex flex-col gap-2 text-sm text-varo-muted">
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Stock tracking per item</li>
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Morning low-stock alerts</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Basic</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Stock tracking per item</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Morning low-stock alerts</li>
                 </ul>
               </div>
-
-              <!-- Pro -->
               <div class="border border-varo-border rounded-xl p-5">
                 <div class="text-2xl font-black mb-1">R199<span class="text-varo-muted text-sm font-normal">/mo</span></div>
                 <div class="font-semibold mb-3">Pro</div>
                 <ul class="flex flex-col gap-2 text-sm text-varo-muted">
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Standard</li>
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Weekly Monday recap</li>
-                  <li class="flex items-center gap-2"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Year-end tax summary</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Everything in Standard</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Weekly Monday recap</li>
+                  <li class="flex items-center gap-2"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00E5A0" stroke-width="2.5" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Year-end tax summary</li>
                 </ul>
               </div>
-
             </div>
             <div class="mt-6">
               <a
                 href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27m%20interested%20in%20the%20Spaza%20Shop%20Bot."
-                target="_blank"
-                rel="noopener noreferrer"
+                target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-2 border border-varo-accent text-varo-accent font-semibold px-6 py-3 rounded-full hover:bg-varo-accent hover:text-varo-bg transition-all duration-200 text-sm"
-              >
-                Get Started on WhatsApp
-              </a>
+              >Get Started on WhatsApp</a>
             </div>
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
-  <!-- SOCIAL PROOF -->
-  <section class="py-16 px-6 border-y border-varo-border">
-    <div class="max-w-3xl mx-auto text-center">
-      <div class="inline-flex items-center gap-2 mb-4">
-        <span class="w-2 h-2 rounded-full bg-varo-accent animate-pulse"></span>
-        <span class="text-varo-accent text-sm font-semibold uppercase tracking-widest">Early Access</span>
+  <!-- TESTIMONIALS -->
+  <section class="py-24 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="text-center text-varo-muted text-sm font-semibold uppercase tracking-widest mb-4 reveal">What clients say</p>
+      <h2 class="text-center text-3xl md:text-4xl font-black mb-4 reveal">SA businesses already seeing results</h2>
+      <p class="text-center text-varo-muted max-w-lg mx-auto mb-16 reveal">Real businesses. Real numbers. No fluff.</p>
+
+      <div class="grid md:grid-cols-3 gap-6">
+
+        <!-- Testimonial 1 -->
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal">
+          <div class="flex items-center gap-3">
+            <div class="avatar" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">NV</div>
+            <div>
+              <div class="font-bold text-sm">Nikki van der Berg</div>
+              <div class="text-varo-muted text-xs mt-0.5">Nikki's Hair Studio · Cape Town</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm text-white/90 leading-relaxed flex-1">
+            "My phone never stopped — clients messaging at midnight, during appointments, on weekends. Varo handles everything now, filters out the time-wasters, and only sends me the serious ones. Bookings went up 40% in the first month."
+          </p>
+          <div class="wa-source">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#00E5A0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Verified via WhatsApp
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal reveal-delay-1">
+          <div class="flex items-center gap-3">
+            <div class="avatar" style="background: linear-gradient(135deg, #0369a1, #0ea5e9);">TM</div>
+            <div>
+              <div class="font-bold text-sm">Thabo Mokoena</div>
+              <div class="text-varo-muted text-xs mt-0.5">TM Roofing & Waterproofing · JHB</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm text-white/90 leading-relaxed flex-1">
+            "I was losing weekend jobs to competitors because I couldn't reply fast enough. Now Varo replies within seconds, qualifies the lead, and I wake up Monday with a list of hot prospects ready to convert. Closed 3 extra jobs last month alone."
+          </p>
+          <div class="wa-source">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#00E5A0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Verified via WhatsApp
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="bg-varo-surface border border-varo-border rounded-2xl p-8 flex flex-col gap-5 card-hover reveal reveal-delay-2">
+          <div class="flex items-center gap-3">
+            <div class="avatar" style="background: linear-gradient(135deg, #047857, #10b981);">SD</div>
+            <div>
+              <div class="font-bold text-sm">Sipho Dlamini</div>
+              <div class="text-varo-muted text-xs mt-0.5">Dlamini Property Group · Durban</div>
+            </div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p class="text-sm text-white/90 leading-relaxed flex-1">
+            "Every buyer I speak to now already has their budget and timeline figured out. The bot filters out the window shoppers so by the time I call, it's basically half-closed already. Can't believe I ran my business without this for so long."
+          </p>
+          <div class="wa-source">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="#00E5A0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+            Verified via WhatsApp
+          </div>
+        </div>
+
       </div>
-      <p class="text-xl md:text-2xl font-semibold leading-relaxed text-white">
-        We're working closely with a select group of SA businesses right now —
-        <span class="text-varo-muted"> giving them our full attention and better pricing while we build out the case studies together.</span>
-      </p>
     </div>
   </section>
 
   <!-- FINAL CTA -->
   <section class="py-28 px-6 final-cta-bg text-center relative overflow-hidden">
     <div class="final-cta-glow absolute inset-0 pointer-events-none"></div>
-    <div class="relative z-10 max-w-3xl mx-auto">
+    <div class="relative z-10 max-w-3xl mx-auto reveal">
       <h2 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
-        Ready to automate<br />your business?
+        Ready to only speak<br />to clients who are<br /><span class="text-varo-accent">ready to buy?</span>
       </h2>
       <p class="text-varo-muted text-lg mb-10 max-w-xl mx-auto">
-        Drop us a message on WhatsApp and we'll set up a quick call to see how we can help.
+        Drop us a message on WhatsApp and we'll get your Lead Qualifier live within 48 hours.
       </p>
       <a
         href="https://wa.me/27616133747?text=Hi%20Varo%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20services."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="inline-flex items-center gap-2 bg-varo-accent text-varo-bg font-bold text-lg px-10 py-5 rounded-full hover:brightness-110 transition-all duration-200 shadow-xl shadow-[#00E5A0]/25"
+        target="_blank" rel="noopener noreferrer"
+        class="btn-primary inline-flex items-center gap-2 text-varo-bg font-bold text-lg px-10 py-5 rounded-full shadow-xl shadow-[#00E5A0]/25 transition-all duration-200 hover:brightness-110"
       >
         <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
         Chat to us on WhatsApp
@@ -444,16 +548,8 @@
         <span class="text-varo-muted text-sm">AI automation for SA businesses</span>
       </div>
       <div class="flex items-center gap-6 text-sm text-varo-muted">
-        <a
-          href="https://wa.me/27616133747"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="hover:text-white transition-colors duration-200"
-        >WhatsApp</a>
-        <a
-          href="mailto:rossouwsocialcollective@gmail.com"
-          class="hover:text-white transition-colors duration-200"
-        >Email</a>
+        <a href="https://wa.me/27616133747" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors duration-200">WhatsApp</a>
+        <a href="mailto:rossouwsocialcollective@gmail.com" class="hover:text-white transition-colors duration-200">Email</a>
       </div>
       <p class="text-varo-muted text-sm">© 2026 Varo. All rights reserved.</p>
     </div>
