@@ -1,1 +1,11 @@
 /* Custom styles — Tailwind CDN handles utilities */
+
+#nav {
+  background: transparent;
+}
+#nav.scrolled {
+  background: rgba(10, 10, 15, 0.95);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid #1F1F2E;
+}
