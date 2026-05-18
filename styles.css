@@ -32,3 +32,13 @@
 .accordion-content {
   transition: max-height 0.4s ease;
 }
+
+/* Final CTA section */
+.final-cta-bg {
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(0, 229, 160, 0.07) 0%, transparent 70%),
+              #0A0A0F;
+}
+
+.final-cta-glow {
+  background: radial-gradient(ellipse 50% 40% at 50% 50%, rgba(0, 229, 160, 0.04) 0%, transparent 70%);
+}
