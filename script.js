@@ -43,7 +43,9 @@ spazaToggle.addEventListener('click', () => {
 // Smooth scroll for anchor links (handles offset for fixed nav)
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    if (href.length <= 1) return;
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
     const offset = nav.offsetHeight + 16;
