@@ -26,17 +26,22 @@ document.querySelectorAll('.mobile-link').forEach(link => {
   });
 });
 
-// Pricing accordion
-const spazaToggle  = document.getElementById('spaza-toggle');
-const spazaContent = document.getElementById('spaza-content');
-const spazaChevron = document.getElementById('spaza-chevron');
+// Pricing accordions
+function makeAccordion(toggleId, contentId, chevronId) {
+  const toggle  = document.getElementById(toggleId);
+  const content = document.getElementById(contentId);
+  const chevron = document.getElementById(chevronId);
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    content.style.maxHeight = isOpen ? '0' : content.scrollHeight + 'px';
+    chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+  });
+}
 
-spazaToggle.addEventListener('click', () => {
-  const isOpen = spazaToggle.getAttribute('aria-expanded') === 'true';
-  spazaToggle.setAttribute('aria-expanded', String(!isOpen));
-  spazaContent.style.maxHeight = isOpen ? '0' : spazaContent.scrollHeight + 'px';
-  spazaChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
-});
+makeAccordion('spaza-toggle', 'spaza-content', 'spaza-chevron');
+makeAccordion('individual-toggle', 'individual-content', 'individual-chevron');
 
 // Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
