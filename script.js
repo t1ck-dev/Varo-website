@@ -27,3 +27,15 @@ document.querySelectorAll('.mobile-link').forEach(link => {
     menuBars[2].style.transform = '';
   });
 });
+
+// Pricing accordion
+const spazaToggle = document.getElementById('spaza-toggle');
+const spazaContent = document.getElementById('spaza-content');
+const spazaChevron = document.getElementById('spaza-chevron');
+
+spazaToggle.addEventListener('click', () => {
+  const isOpen = spazaToggle.getAttribute('aria-expanded') === 'true';
+  spazaToggle.setAttribute('aria-expanded', String(!isOpen));
+  spazaContent.style.maxHeight = isOpen ? '0' : spazaContent.scrollHeight + 'px';
+  spazaChevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+});

@@ -27,3 +27,8 @@
 .hero-glow {
   background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(0, 229, 160, 0.06) 0%, transparent 70%);
 }
+
+/* Accordion smooth height transition */
+.accordion-content {
+  transition: max-height 0.4s ease;
+}
