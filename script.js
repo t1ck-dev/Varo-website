@@ -138,14 +138,12 @@ if (heroSection) {
 // Scratch & Win popup
 (function () {
   const PRIZES = [
-    { emoji: '🏆', label: 'Jackpot!',  value: 'FREE Setup',    sub: 'Save R750+',         code: 'VAROFREE', msg: 'Hi Varo! I scratched and won the FREE Setup (code: VAROFREE). I\'d love to get started!' },
-    { emoji: '⭐', label: 'Winner!',   value: '50% OFF',        sub: 'First month',         code: 'VARO50',   msg: 'Hi Varo! I scratched and won 50% off my first month (code: VARO50). I\'d love to get started!' },
+    { emoji: '⭐', label: 'Winner!',   value: '30% OFF',       sub: 'First month',         code: 'VARO30',   msg: 'Hi Varo! I scratched and won 30% off my first month (code: VARO30). I\'d love to get started!' },
     { emoji: '🎁', label: 'You won!', value: 'FREE Creative',  sub: 'Design (R150 value)', code: 'VAROGIFT', msg: 'Hi Varo! I scratched and won a free design creative (code: VAROGIFT). I\'d love to get started!' }
   ];
 
   function pickPrize() {
-    const r = Math.random();
-    return r < 0.25 ? PRIZES[0] : r < 0.65 ? PRIZES[1] : PRIZES[2];
+    return Math.random() < 0.5 ? PRIZES[0] : PRIZES[1];
   }
 
   function makeEl(tag, cls, text) {
