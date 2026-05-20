@@ -192,6 +192,14 @@ if (heroSection) {
     if (!/^[0-9+\s]{8,15}$/.test(phone))            { errorEl.textContent = 'Please enter a valid phone number.'; return; }
 
     errorEl.textContent      = '';
+
+    fetch('https://script.google.com/macros/s/AKfycbycl8lNpAlFW7gBaD75netAd9nxyZ-rBlwufzLbIlX9EbN02jiUx6gPRktSqXs4sCat/exec', {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ name: name, phone: phone, email: email, prize: prize.value, code: prize.code })
+    }).catch(function () {});
+
     stepForm.style.display    = 'none';
     stepScratch.style.display = 'block';
 
