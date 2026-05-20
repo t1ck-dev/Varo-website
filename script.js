@@ -134,3 +134,166 @@ if (heroSection) {
   }, { threshold: 0.3 });
   heroObserver.observe(heroSection);
 }
+
+// Scratch & Win popup
+(function () {
+  const PRIZES = [
+    { emoji: '🏆', label: 'Jackpot!',  value: 'FREE Setup',    sub: 'Save R750+',         code: 'VAROFREE', msg: 'Hi Varo! I scratched and won the FREE Setup (code: VAROFREE). I\'d love to get started!' },
+    { emoji: '⭐', label: 'Winner!',   value: '50% OFF',        sub: 'First month',         code: 'VARO50',   msg: 'Hi Varo! I scratched and won 50% off my first month (code: VARO50). I\'d love to get started!' },
+    { emoji: '🎁', label: 'You won!', value: 'FREE Creative',  sub: 'Design (R150 value)', code: 'VAROGIFT', msg: 'Hi Varo! I scratched and won a free design creative (code: VAROGIFT). I\'d love to get started!' }
+  ];
+
+  function pickPrize() {
+    const r = Math.random();
+    return r < 0.25 ? PRIZES[0] : r < 0.65 ? PRIZES[1] : PRIZES[2];
+  }
+
+  function makeEl(tag, cls, text) {
+    const el = document.createElement(tag);
+    if (cls)  el.className   = cls;
+    if (text !== undefined) el.textContent = text;
+    return el;
+  }
+
+  const overlay      = document.getElementById('vp-overlay');
+  const backdrop     = document.getElementById('vp-backdrop');
+  const closeBtn     = document.getElementById('vp-close');
+  const form         = document.getElementById('vp-form');
+  const errorEl      = document.getElementById('vp-error');
+  const stepForm     = document.getElementById('vp-step-form');
+  const stepScratch  = document.getElementById('vp-step-scratch');
+  const stepClaimed  = document.getElementById('vp-step-claimed');
+  const prizeEl      = document.getElementById('vp-prize');
+  const canvas       = document.getElementById('vp-canvas');
+  const claimBtn     = document.getElementById('vp-claim-btn');
+  const codeEl       = document.getElementById('vp-code');
+  const claimedBox   = document.getElementById('vp-claimed-display');
+  const confettiWrap = document.getElementById('vp-confetti');
+
+  const prize = pickPrize();
+  let revealed = false;
+
+  function openPopup()  { overlay.classList.add('active'); document.body.style.overflow = 'hidden'; }
+  function closePopup() { overlay.classList.remove('active'); document.body.style.overflow = ''; localStorage.setItem('vp-seen', '1'); }
+
+  if (!localStorage.getItem('vp-seen')) setTimeout(openPopup, 3200);
+
+  closeBtn.addEventListener('click', closePopup);
+  backdrop.addEventListener('click', closePopup);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const name  = document.getElementById('vp-name').value.trim();
+    const phone = document.getElementById('vp-phone').value.trim();
+    const email = document.getElementById('vp-email').value.trim();
+
+    if (!name || !phone || !email)                  { errorEl.textContent = 'Please fill in all fields.';        return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { errorEl.textContent = 'Please enter a valid email.';        return; }
+    if (!/^[0-9+\s]{8,15}$/.test(phone))            { errorEl.textContent = 'Please enter a valid phone number.'; return; }
+
+    errorEl.textContent      = '';
+    stepForm.style.display    = 'none';
+    stepScratch.style.display = 'block';
+
+    prizeEl.textContent = '';
+    prizeEl.appendChild(makeEl('div', 'pz-label', prize.emoji + ' ' + prize.label));
+    prizeEl.appendChild(makeEl('div', 'pz-value', prize.value));
+    prizeEl.appendChild(makeEl('div', 'pz-sub',   prize.sub));
+
+    requestAnimationFrame(function () { requestAnimationFrame(initCanvas); });
+  });
+
+  function initCanvas() {
+    var wrap = canvas.parentElement;
+    var w = wrap.offsetWidth;
+    var h = wrap.offsetHeight;
+    canvas.width  = w;
+    canvas.height = h;
+
+    var ctx  = canvas.getContext('2d');
+    var grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0,   '#b8b8b8');
+    grad.addColorStop(0.4, '#d4d4d4');
+    grad.addColorStop(0.7, '#a4a4a4');
+    grad.addColorStop(1,   '#c0c0c0');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    ctx.strokeStyle = 'rgba(90,90,90,0.12)';
+    ctx.lineWidth   = 1;
+    for (var x = 0; x < w; x += 12) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
+    for (var y = 0; y < h; y += 12) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
+
+    ctx.fillStyle    = 'rgba(60,60,60,0.45)';
+    ctx.font         = 'bold 14px Inter, sans-serif';
+    ctx.textAlign    = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('✦  SCRATCH HERE  ✦', w / 2, h / 2);
+
+    var isDown = false;
+
+    function getPos(e) {
+      var r = canvas.getBoundingClientRect();
+      var s = e.touches ? e.touches[0] : e;
+      return { x: (s.clientX - r.left) * (w / r.width), y: (s.clientY - r.top) * (h / r.height) };
+    }
+
+    function doScratch(e) {
+      if (!isDown) return;
+      e.preventDefault();
+      var p = getPos(e);
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.beginPath();
+      ctx.arc(p.x, p.y, 24, 0, Math.PI * 2);
+      ctx.fill();
+      checkDone(ctx, w, h);
+    }
+
+    canvas.addEventListener('mousedown',  function () { isDown = true; });
+    canvas.addEventListener('mouseup',    function () { isDown = false; });
+    canvas.addEventListener('mouseleave', function () { isDown = false; });
+    canvas.addEventListener('mousemove',  doScratch);
+    canvas.addEventListener('touchstart', function (e) { isDown = true; e.preventDefault(); }, { passive: false });
+    canvas.addEventListener('touchend',   function () { isDown = false; });
+    canvas.addEventListener('touchmove',  doScratch, { passive: false });
+  }
+
+  function checkDone(ctx, w, h) {
+    if (revealed) return;
+    var data    = ctx.getImageData(0, 0, w, h).data;
+    var cleared = 0;
+    for (var i = 3; i < data.length; i += 4) { if (data[i] < 128) cleared++; }
+    if (cleared / (data.length / 4) > 0.52) revealPrize();
+  }
+
+  function revealPrize() {
+    revealed = true;
+    canvas.style.transition = 'opacity 0.55s ease';
+    canvas.style.opacity    = '0';
+    setTimeout(function () {
+      stepScratch.style.display = 'none';
+      stepClaimed.style.display = 'block';
+
+      claimedBox.textContent = '';
+      claimedBox.appendChild(makeEl('div', 'vp-claimed-emoji', prize.emoji));
+      claimedBox.appendChild(makeEl('div', 'vp-claimed-value', prize.value));
+      claimedBox.appendChild(makeEl('div', 'vp-claimed-sub',   prize.sub));
+
+      codeEl.textContent = prize.code;
+      claimBtn.href = 'https://wa.me/27616133747?text=' + encodeURIComponent(prize.msg);
+      spawnConfetti();
+    }, 600);
+  }
+
+  function spawnConfetti() {
+    var colors = ['#00E5A0', '#00c484', '#ffffff', '#ffd700', '#ff6b9d', '#7c3aed'];
+    for (var i = 0; i < 22; i++) {
+      var el = makeEl('div', 'vp-confetti-piece');
+      el.style.left              = Math.random() * 100 + '%';
+      el.style.background        = colors[i % colors.length];
+      el.style.animationDelay    = (Math.random() * 0.4) + 's';
+      el.style.animationDuration = (0.7 + Math.random() * 0.7) + 's';
+      confettiWrap.appendChild(el);
+    }
+  }
+}());
