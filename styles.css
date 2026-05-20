@@ -251,3 +251,28 @@
   box-shadow: 0 0 28px rgba(0,229,160,0.07);
   transform: translateY(-2px);
 }
+
+/* ── Mobile optimizations ── */
+@media (max-width: 1023px) {
+  .phone-wrap { width: 200px; }
+  .wa-body    { min-height: 180px; }
+  .lead-notif { display: none; }
+}
+
+.testimonial-quote {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .testimonial-quote {
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+}
+
+/* Hide scrollbar on swipe rows */
+.swipe-row { scrollbar-width: none; }
+.swipe-row::-webkit-scrollbar { display: none; }
